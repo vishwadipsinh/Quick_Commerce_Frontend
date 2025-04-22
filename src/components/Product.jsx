@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 const Product = ({ items, cart, setCart }) => {
+
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
   const addToCart = (id, price, title, description, imgSrc) => {
     const existingItem = cart.find((item) => item.id === id);
 

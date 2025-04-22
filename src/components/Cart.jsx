@@ -21,6 +21,16 @@ const Cart = ({ cart, setCart }) => {
     );
   };
 
+  const grandTotal = cart?.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+
+
+  const clearCart = () => {
+    setCart([])
+    localStorage.setItem("cart", "");
+  }
+
   return (
     <>
       <div className="container my-5" style={{ width: "54%" }}>
@@ -90,7 +100,7 @@ const Cart = ({ cart, setCart }) => {
                           }
                         </div>
 
-                        <button className="btn btn-warning">Buy Now</button>
+                        {/* <button className="btn btn-warning">Buy Now</button> */}
                       </div>
                     </div>
                   </div>
@@ -111,7 +121,8 @@ const Cart = ({ cart, setCart }) => {
           }}
         >
           <button className="btn btn-warning mx-5 ">CheckOut</button>
-          <button onClick={() => setCart("")} className="btn btn-danger">
+          <p className="btn btn-warning mx-5 ">{grandTotal}</p>
+          <button onClick={clearCart} className="btn btn-danger">
             Clear Cart
           </button>
         </div>
