@@ -57,7 +57,7 @@ const Cart = ({ cart, setCart }) => {
                       />
                     </div>
                     <div className="col-md-8">
-                      <div className="card-body text-center">
+                      <div className="card-body text-center product-box">
                         <h5 className="card-title">{product.title}</h5>
                         <div
                           style={{ display: "flex", justifyContent: "center" }}
@@ -120,9 +120,15 @@ const Cart = ({ cart, setCart }) => {
             alignItems: "center",
           }}
         >
-          <button className="btn btn-warning mx-5 ">CheckOut</button>
-          <p className="btn btn-warning mx-5 ">{grandTotal}</p>
-          <button onClick={clearCart} className="btn btn-danger">
+          <a href="https://www.zeptonow.com/git">
+            <button className="btn btn-warning mx-5 ">CheckOut</button>
+          </a>
+
+          <div className="btn btn-primary mx-2">Grand Total:
+            <div className="btn btn-danger mx-2 ">{grandTotal}</div>
+          </div>
+
+          <button onClick={clearCart} className="btn btn-secondary clearcartbutton">
             Clear Cart
           </button>
         </div>

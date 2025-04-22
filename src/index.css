@@ -77,3 +77,18 @@ input::placeholder {
     align-items: center;
     margin: 10px 0;
 }
+
+.product-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin: 50px 0px; */
+    gap: 2rem;
+    /* border: 2px solid black; */
+}
+
+
+.clearcartbutton {
+    margin-left: 50px;
+}

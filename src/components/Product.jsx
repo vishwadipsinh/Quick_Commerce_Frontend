@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Product = ({ items, cart, setCart }) => {
 
-
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);

@@ -10,7 +10,11 @@ import Login from './components/Login'
 import Register from './components/Register'
 const App = () => {
   const [data, setData] = useState([...items])
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem('cart');
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
   return (
     <>
       <Router>
