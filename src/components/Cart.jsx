@@ -120,7 +120,7 @@ const Cart = ({ cart, setCart }) => {
             alignItems: "center",
           }}
         >
-          <a href="https://www.zeptonow.com/git">
+          <a href="https://www.zeptonow.com/pip/zepto-cafe/12830?srsltid=AfmBOorfcEogkY8vh4RIuulhCFveS5jngucjGVOZxnLVqwaIBohmirGY">
             <button className="btn btn-warning mx-5 ">CheckOut</button>
           </a>
 
