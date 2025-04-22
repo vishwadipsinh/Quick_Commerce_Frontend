@@ -10,7 +10,7 @@ export default function Register() {
 
     const formRegister = (data) => {
         console.log(data);
-        axios.post('http://localhost:3000/user/register', data).then(response => console.log(response));
+        axios.post('https://quick-commerce-backend.onrender.com/user/register', data).then(response => console.log(response));
         navigate('/login');
     }
 

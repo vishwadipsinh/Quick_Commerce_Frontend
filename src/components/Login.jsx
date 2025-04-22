@@ -12,7 +12,7 @@ export default function Login() {
 
     const formLogin = (data) => {
         console.log(data);
-        axios.post('http:///localhost:3000/user/login', data, { withCredentials: true }).then(response => console.log(response));
+        axios.post('https://quick-commerce-backend.onrender.com/user/login', data, { withCredentials: true }).then(response => console.log(response));
         navigate('/');
     }
 
