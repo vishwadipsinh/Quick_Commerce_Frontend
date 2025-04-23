@@ -124,9 +124,7 @@ const Cart = ({ cart, setCart }) => {
             <button className="btn btn-warning mx-5 ">CheckOut</button>
           </a>
 
-          <div className="btn btn-primary mx-2">Grand Total:
-            <div className="btn btn-danger mx-2 ">{grandTotal}</div>
-          </div>
+          <div className="btn btn-primary mx-2">Grand Total: {grandTotal}</div>
 
           <button onClick={clearCart} className="btn btn-secondary clearcartbutton">
             Clear Cart
