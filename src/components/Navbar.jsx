@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { items } from './Data'
 import { BsFillCartCheckFill } from 'react-icons/bs';
@@ -17,10 +17,8 @@ const Navbar = ({ setData, cart }) => {
     setData(element)
   }
 
-  const filterByPrice = (price) => {
-    const element = items.filter((product) => product.price >= price)
-    setData(element)
-  }
+  const isProfilePage = location.pathname.startsWith('/login');
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,14 +26,19 @@ const Navbar = ({ setData, cart }) => {
     setSearchTerm("")
   }
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem("authToken");
+  //   if (token) {
+  //     setLoggedIn(true);
+  //   }
+  // }, []);
 
   return (
     <>
       <header className='sticky-top'>
         <div className="nav-bar">
           <Link to={'/'} className="brand">Boltt</Link>
-
-          <form
+          {isProfilePage ? <></> : <form
             // onClick={handleSubmit} 
             onSubmit={handleSubmit}
             className="mt-2">
@@ -45,7 +48,8 @@ const Navbar = ({ setData, cart }) => {
               type="text"
               placeholder='Search Products'
             />
-          </form>
+          </form>}
+
 
           <div className='profile' style={{ display: "flex", width: "140px", justifyContent: "space-between", padding: "10px" }} >
             <Link to={'/cart'} className="cart">
